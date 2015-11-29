@@ -38,7 +38,7 @@ Każdy folder składa się:
 	* `sampleXY.wav/txt`: sample w formacie .wav lub .txt 
 	  definicja instrumentu, kazdy plik sampleXY.txt powinien zawierać informacje na temat: 
 	  
-	     * "id" instrumentu, 
+	    * "id" instrumentu, 
 	  
 	    * "fun" funkcji z której generujemy nutki dla wybranego instrumentu, 
 	  
