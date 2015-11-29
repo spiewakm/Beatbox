@@ -1,7 +1,3 @@
----
-output: html_document
----
-
 # beatbox
 
 Repozytorium `'beatbox'` zawiera następujące pliki oraz foldery:
