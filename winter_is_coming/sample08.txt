@@ -1,0 +1,8 @@
+{
+	"id": sinu
+	"fun": np.minimum(np.maximum((np.power(np.sin(2*np.pi*f*t),2)+0.75*np.sin(2*np.pi*f*t+0.25*np.pi)+0.1*0.75*np.sin(2*np.pi*f*t+0.5*np.pi)),-1),1)
+	"vol": 1
+	"duration": 8
+    	"attack": 0.05
+    	"decay": 0.1
+}
