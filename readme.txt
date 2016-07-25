@@ -1,5 +1,40 @@
 # beatbox
 
+*In English*
+
+The `beatbox` project was created during Python for Data Processing and Analysis classes. Its main idea was built some kind of application that allows to create simple demo of some song. My `beatbox` can create following demos:
+
+  * the opening theme song from Game of Thrones;
+  
+  * the Hedwig's theme from Harry Potter;
+  
+  * Szła dzieweczka do laseczka -- Polish folk song;
+  
+  * Mam chusteczke... -- also Polish folk song.
+  
+
+### How to create a demo using `beatbox`?
+
+To create any demo you shoud type the following onto a line in the terminal to get started:
+
+```{pyton}
+python beatbox.py name_demo
+```
+
+
+where `name_demo` can be one of the following names: winter_is_coming, harry_potter, szla_dzieweczka, mam_chusteczke.
+
+The demo was saved in the current directory. To play the created demo you can use following command, eg.:
+ 
+ 
+```{python}
+mplayer name_demo.wav
+```
+
+Have fun! :)
+
+*In Polish*
+
 Repozytorium `'beatbox'` zawiera następujące pliki oraz foldery:
 
 * `beatbox.py`: główna aplikacja, która wykorzystuje ponadto poniższe moduły:
@@ -51,7 +86,5 @@ Każdy folder składa się:
 	    * "decay".
 
 
-Utworzone demo można znaleźć w katalogu `/var/tmp/nazwa_utworu`, gdzie nazwa jest taka sama jak nazwa katalogu. Każde demo jest zapisywane w formacie .wav.
-
-Istnieje możliwość stworzenia demo dla spakowanych folderów (format .zip).
+Utworzone demo można znaleźć w bieżącym katalogu, gdzie nazwa jest taka sama jak nazwa katalogu. Każde demo jest zapisywane w formacie .wav.
 
