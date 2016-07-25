@@ -1,27 +1,36 @@
-#!/opt/anaconda3/bin/python3
+#!/usr/bin/python
 
 """
-modul glowny: beatbox
+main module: beatbox
 
-modul sluzy do tworzenia demo
+this module creates demo of a selected song
+from following list of songs:
+- harry potter
+- winter is coming
+- szla dzieweczka
+- mam chusteczke
+
 """
-
-print('Zaczekaj chwile, tworze demo...')
-
-import sys
-
-name = sys.argv[1][:-1]
-print(name)
-
 import read_song as rs
 import save_song as ss
 import create_song as cs
 import numpy as np
 import zipfile
 import os.path
+import sys
 
-# zakladam, ze jesli nie ma pliku .zip wowczas 
-# istnieje rozpakowany katalog namesong
+name = sys.argv[1]
+
+if name not in ('harry_potter', 'mam_chusteczke', 'szla_dzieweczka', 'winter_is_coming'):
+    print('Ups... Invalid name of demo! Try again!')
+    print('You can choose following names of demo: \n harry_potter \n mam_chusteczke \n szla_dzieweczka \n winter_is_coming')
+    sys.exit()
+    
+print('Wait a minute I am creating demo...')
+print("Demo's name: " + name)
+print('...')
+
+
 name_tmp = name + '.zip'
 if os.path.isfile(name_tmp): 
     with zipfile.ZipFile(name_tmp, "r") as z:
@@ -44,4 +53,7 @@ if decay > 0:
 
 ss.writesong(song = y, namesong = name, bpm = bpm)
 
-print('Done!')
+print('Done!\n')
+print('You can use following command to play a created demo:')
+print('mplayer ' + name + '.wav\n')
+print('Have fun!')

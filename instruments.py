@@ -1,7 +1,9 @@
 # -*- coding: utf-8 -*-
 """
-modul: instruments
-zawiera definicje instumentu, np. fala piłokształtna, kombinacja funkcji sinus
+module: instruments
+
+this modeule contains definition of a instrument,
+for example: combination of sine waves or sawtooth waves
 """
 
 import nutes as nut
@@ -9,37 +11,35 @@ import numpy as np
 
 def gen_instrument(namesong, id_sample, nute, bpm = 60, fs = 44100, attack = 0, decay = 0):
     """
-    funkcja generujaca nutki z wybranego 
-    instrumentu
+    function generates notes from selected instrument
     
-    dane wejsciowe:
-    namesong: nazwa utworu
+    input:
+    namesong: name of demo/song
     
-    id_sample: numer instrumentu
+    id_sample: number of instrument
        
-    fun: funkcja, ktora wyznaczy czestotliwosci dzwieku
+    fun: function that determines frequency of sound
     
-    nute: ktora nutka ma byc zagrana z wybranego instrumentu
+    note: which notes should be played from a selected instrument
     
     bpm: beat per minute
     fs: samplig freq
     attack, decay
-    
-    dane wyjściowe:
-    wektor y: nutka wygenerowana z instrumentu o id_sample
+  
+    output:
+    vector y: generated note from an id_sample instrument
     """
     
     def readsample(namesong, id_sample):
         """
-        funkcja pomocnicza
-        opis: wczytanie konfiguracji instrumentu
+        scope: load a configuration of instrument
         
-        dane wyjsciowe:
-        dicts: slownik, zawierajacy nastepujace informacje:
-        id: nazwa instrumentu
-        fun: funkcja do generacji nutki z wybranego instrumentu
-        duration: dlugosc trwania nutki, tzn wielokrotnosc (60/bpm)
-        vol: glosnosc dzwieku
+        output:
+        dicts: dictionary contains following info:
+        id: name of instrument
+        fun: function to generate note from selected instrument 
+        duration: duration of notes (60/bpm)
+        vol: volume of sound
         attack, decay
         """
         namesong = namesong + '/sample' + id_sample +  '.txt'

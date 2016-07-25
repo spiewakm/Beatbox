@@ -1,9 +1,8 @@
 # -*- coding: utf-8 -*-
 """
-modul: create_song
+module: create_song
 
-zawiera funkcje, dzieki ktorej tworzymy wektor z odpowiednimi
-czestotliwosciam => tworzymy demo
+this module contains functions so that we can create a demo
 """
 
 import warnings
@@ -17,18 +16,18 @@ import instruments as inst
 
 def trackload(namesong, tracks, bpm, fs = 44100, attack = 0, decay = 0):
     """
-    opis: funkcja dzieki, ktore tworzymy
+    scope: function to create a demo
     
-    dane wejsciowe:
-    namesong: nazwa piosenki
-    tracks: lista tracków, z której składa się piosenka
+    input:
+    namesong: name of demo/song
+    tracks: list of tracks that consists of a demo
     bpm: beats per minute
     fs: sampling frequency
     attack
     decay
     
-    dane wyjsciowe:
-    wektor y: demo
+    output:
+    vector y: demo
     """
     y = np.array([]) # wyjsciowa piosenka
     counter = 0 # ktora sekunda dla kolejnej linii sampli

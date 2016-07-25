@@ -1,6 +1,7 @@
 """
-modul: save_song:
-zapis piosenki do katalog /var/tmp
+module: save_song:
+
+this module saves a demo to a locale folder
 """
 
 import numpy as np
@@ -8,10 +9,9 @@ import scipy.io.wavfile
                       
 def writesong(song, namesong, fs = 44100, bpm = 120):
     """
-    opis: zapisuje stworzony wektor y
-    do katalogu /var/tmp/
+    scope: save created a vector y to a locale folder
     """
-    scipy.io.wavfile.write('/var/tmp/' + namesong + '.wav',
+    scipy.io.wavfile.write(namesong + '.wav',
                        int(fs),
                        np.int16(song/max(np.abs(song))*32767))
                        

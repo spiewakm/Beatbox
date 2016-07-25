@@ -1,16 +1,16 @@
 # -*- coding: utf-8 -*-
 """
-modul: read_song:
-odczyt definicji plików:
+module: read_song:
+load definitions of files:
 * defs.txt
 * song.txt
 """
 
 def readdefs(namesong):
     """
-    opis: wczytanie konfiguracji piosenki
+    scope: load a configuration of demo 
     
-    dane wyjsciowe:
+    output:
     bpm: beats per minute
     """
     namesong = namesong + '/' + 'defs.txt'
@@ -27,14 +27,13 @@ def readdefs(namesong):
 
 def readsong(namesong):
     """
-    opis: wczytywanie kolejnosci trakow w piosence "namesong"
+    scope: load order of tracks in a demo
     
-    dane wejsciowe: 
-    namesong: nazwa piosenki
+    input: 
+    namesong: name of demo
     
-    dane wyjsciowe:
-    tracks: wektor z lista trackow, z ktorej sklada sie 
-    piosenka "namesong"
+    output:
+    tracks: vector of list of tracks that contains of a demo 
     """
     namesong = namesong + '/' + 'song.txt'
     with open(namesong) as song:

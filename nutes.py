@@ -1,10 +1,11 @@
 # -*- coding: utf-8 -*-
 """
-modul: nutes
-zawiera definicje nutek, definicje slownika 
-oraz definicje funkcji ktora generuje nutki
+module: nutes
 
-zakladam, ze 'podstawowe' nutki pochodza z fali sinusoidalnej
+this module contains the definition of notes, the definition of a dictionary
+and the definition of a function that generates notes
+
+additionally, we assumed that 'basic' notes come from the sine wave
 """
 
 import numpy as np
@@ -30,21 +31,21 @@ freq = [16.35, 17.32, 18.35, 19.45, 20.60, 21.83, 23.12, 24.50, 25.96, 27.50, 29
         3135.96, 3322.44, 3520.00, 3729.31, 3951.07, 4186.01, 4434.92, 4698.63, 4978.03, 5274.04, 5587.65, 
         5919.91, 6271.93, 6644.88, 7040.00, 7458.62, 7902.13]
 
-# definicja slownika
+# definition of dictionary
 Nutes = {}
 for i in range(len(nute)):
     Nutes[nute[i]] = freq[i]
     
 def gen_nute(nute, Nutes, bpm, fs = 44100):
     """
-    funkcja, ktora generuje nuty
-    dane wejsciowe:
-    nute: definicja nuty, np A-4
-    Nutes: slownik zawierajacy czestotliwosci, odpowiadajace
-    danym nutkom
+    scope: function that generated nutes
     
-    dane wyjsciowe:
-    wektor y: nutka wygenerowana z fali sinusoidalnej
+    input: 
+    nute: definition of nute, eg. A-4
+    Nutes: dictionary contains frequency corresponding to notes 
+    
+    output:
+    vector y: generated note from the sine waves
     """
     f = Nutes[str(nute)] # czestotliwosc odpowiadajaca danej nutce
     T = 1.5*(60/bpm) # zakladam, ze nutka trwa 1.5 
